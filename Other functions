@@ -1,0 +1,13 @@
+public_tweets = api.home_timeline()
+for tweet in public_tweets:
+    print(tweet.text)
+
+print(user.name)
+print(user.screen_name)
+print(user.followers_count)
+
+#Generous Bot
+for follower in limit_handler(tweepy.Cursor(api.followers).items()):
+    if follower.name == 'Username':
+        follower.follow()
+        break
